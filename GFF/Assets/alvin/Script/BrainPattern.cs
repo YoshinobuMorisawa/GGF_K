@@ -114,7 +114,6 @@ public class BrainPattern : MonoBehaviour
             }
         }
 
-
         //旧型
         if (serialCode <= 50)
         {
@@ -157,7 +156,7 @@ public class BrainPattern : MonoBehaviour
                     }
                     if (brainType == BrainType.D)
                     {
-                        brainAns = 'C';
+                        brainAns = 'F';
                     }
                     else
                     {
