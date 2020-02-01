@@ -13,12 +13,7 @@ public class StomachPattern : MonoBehaviour
 
     StomachType stomachType = StomachType.a;
 
-    public int Stomachans;
-    public int battery = 100;
-    public int line = 100;
-    public bool isTrue;
-    public int stomachPercent = 100;
-    public int serialCode;
+    public int stomachPercent;
 
     // Start is called before the first frame update
     void Start()
@@ -29,151 +24,163 @@ public class StomachPattern : MonoBehaviour
     // Update is called once per frame
     public void Awake()
     {
-        if (serialCode > 50)
+       
+
+    }
+
+    public void init(GameManager GM)
+    {
+        stomachPercent = Random.Range(0, 101);
+        if (stomachPercent >= 66)
         {
-            isTrue = true;
+            stomachType = StomachType.c;
         }
-        if (serialCode <= 50)
+        else if (stomachPercent >= 33 && stomachPercent < 66)
         {
-            isTrue = false;
+            stomachType = StomachType.b;
+        }
+        else if (stomachPercent <= 33)
+        {
+            stomachType = StomachType.a;
         }
 
+
         //新型
-        if (serialCode > 50)
+        if (GM.isNew)
         {
-            if (battery > 50)
+            if (GM.battery > 50)
             {
-                if (line >30)
+                if (GM.line > 30)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'D';
+                        GM.Answer[3] = 3;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'E';
+                        GM.Answer[3] = 4;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'F';
+                        GM.Answer[3] = 5;
                     }
                 }
-                if (line <= 30)
+                if (GM.line <= 30)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'A';
+                        GM.Answer[3] = 0;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'B';
+                        GM.Answer[3] = 1;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'C';
+                        GM.Answer[3] = 2;
                     }
                 }
             }
-            if (battery <= 50)
+            if (GM.battery <= 50)
             {
-                if (line > 30)
+                if (GM.line > 30)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'A';
+                        GM.Answer[3] = 0;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'B';
+                        GM.Answer[3] = 1;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'C';
+                        GM.Answer[3] = 2;
                     }
                 }
-                if (line <= 30)
+                if (GM.line <= 30)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'D';
+                        GM.Answer[3] = 3;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'E';
+                        GM.Answer[3] = 4;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'F';
+                        GM.Answer[3] = 5;
                     }
                 }
             }
         }
         //旧型
-        if (serialCode <= 50)
+        if (!GM.isNew)
         {
-            if (battery > 20)
+            if (GM.battery > 20)
             {
-                if (line > 80)
+                if (GM.line > 80)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'G';
+                        GM.Answer[3] = 6;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'F';
+                        GM.Answer[3] = 5;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'E';
+                        GM.Answer[3] = 4;
                     }
                 }
-                if (line <= 80)
+                if (GM.line <= 80)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'E';
+                        GM.Answer[3] = 4;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'C';
+                        GM.Answer[3] = 2;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'A';
+                        GM.Answer[3] = 0;
                     }
                 }
             }
-            if (battery <= 20)
+            if (GM.battery <= 20)
             {
-                if (line > 80)
+                if (GM.line > 80)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'C';
+                        GM.Answer[3] = 2;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'G';
+                        GM.Answer[3] = 6;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'E';
+                        GM.Answer[3] = 4;
                     }
                 }
-                if (line <= 80)
+                if (GM.line <= 80)
                 {
                     if (stomachType == StomachType.c)
                     {
-                        Stomachans = 'B';
+                        GM.Answer[3] = 1;
                     }
                     if (stomachType == StomachType.b)
                     {
-                        Stomachans = 'D';
+                        GM.Answer[3] = 3;
                     }
                     if (stomachType == StomachType.a)
                     {
-                        Stomachans = 'A';
+                        GM.Answer[3] = 0;
                     }
                 }
             }

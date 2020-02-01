@@ -12,7 +12,7 @@ public class Slides : MonoBehaviour {
 	[SerializeField]
 	private List<GameObject> ansObjects;
 
-	private Vector2 originPos = new Vector2(30, -2);
+	private Vector2 originPos = new Vector2(10, -2);
 	private int index = 0;
 
 	public void Add(GameObject prefab){
@@ -23,7 +23,7 @@ public class Slides : MonoBehaviour {
 		item.SetParent(transform, false);
 		item.sizeDelta = new Vector2(50, 50);
 		
-		item.transform.position = item.parent.transform.position + new Vector3(originPos.x + index * 60, originPos.y, 0);
+		item.transform.position = item.parent.transform.position + new Vector3(originPos.x + index * (20), originPos.y, 0);
 		objects.Add(itemobj);
 	}
 
