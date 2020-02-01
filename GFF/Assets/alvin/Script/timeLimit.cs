@@ -16,7 +16,7 @@ public class timeLimit : MonoBehaviour
     }
     void Update()
     {
-        countdown.text = ("" + timeLeft); //Showing the Score on the Canvas
+        countdown.text = (timeLeft + "s"); //Showing the Score on the Canvas
     }
     //Simple Coroutine
     IEnumerator LoseTime()
@@ -25,6 +25,12 @@ public class timeLimit : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timeLeft--;
+            if (timeLeft <= 0)
+            {
+                timeLeft = 0;
+                break;
+            }
         }
+        
     }
 }

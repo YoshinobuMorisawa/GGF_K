@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StomachPattern : MonoBehaviour
 {
@@ -14,11 +15,12 @@ public class StomachPattern : MonoBehaviour
     StomachType stomachType = StomachType.a;
 
     public int stomachPercent;
+    private Image myImage;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        myImage = GameObject.Find("imgStomachFront").GetComponentInChildren<Image>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class StomachPattern : MonoBehaviour
     public void init(GameManager GM)
     {
         stomachPercent = Random.Range(0, 101);
+        myImage.fillAmount = (float)stomachPercent / 100f;
         if (stomachPercent >= 66)
         {
             stomachType = StomachType.c;
