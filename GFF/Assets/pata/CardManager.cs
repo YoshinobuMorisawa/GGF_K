@@ -18,7 +18,7 @@ public class CardManager : MonoBehaviour
     public List<Tuple> tuples = new List<Tuple>();
     Text ownText;
 
-    private void Awake() {
+    private void Start() {
         ownText = gameObject.GetComponent<Text>();
         string text = "";
         text += "シリアルコード : ";
@@ -33,12 +33,6 @@ public class CardManager : MonoBehaviour
         }
         ownText.text = text;
     }   
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
