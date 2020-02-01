@@ -29,12 +29,12 @@ void Start()
         {
             isNew = false;
         }
-        
-        if(isNew)
+
+        if (isNew)
         {
             if (Pattern >= 50)//バッテリー
             {
-                if (Pattern >=30)//回線強度
+                if (Pattern >= 30)//回線強度
                 {
                     if (sePattern == 1)
                     {
@@ -110,88 +110,89 @@ void Start()
                     }
                 }
             }
-            if(isNew)
+        }
+        else
+        {
+            if (Pattern >= 20)//バッテリー
             {
-                if (Pattern >= 20)//バッテリー
+                if (Pattern >= 80)//回線強度
                 {
-                    if (Pattern >= 80)//回線強度
+                    if (sePattern == 1)
                     {
-                        if (sePattern == 1)
-                        {
-                            //G
-                            se.PlayOneShot(sound1);
-                        }
-                        if (sePattern == 2)
-                        {
-                            //E
-                            se.PlayOneShot(sound2);
-                        }
-                        if (sePattern == 3)
-                        {
-                            //C
-                            se.PlayOneShot(sound3);
-                        }
+                        //G
+                        se.PlayOneShot(sound1);
                     }
-                    if (Pattern < 80)//回線強度
+                    if (sePattern == 2)
                     {
-                        if (sePattern == 1)
-                        {
-                            //E
-                            se.PlayOneShot(sound1);
-                        }
-                        if (sePattern == 2)
-                        {
-                            //B
-                            se.PlayOneShot(sound2);
-                        }
-                        if (sePattern == 3)
-                        {
-                            //D
-                            se.PlayOneShot(sound3);
-                        }
+                        //E
+                        se.PlayOneShot(sound2);
+                    }
+                    if (sePattern == 3)
+                    {
+                        //C
+                        se.PlayOneShot(sound3);
                     }
                 }
-                if (Pattern >= 20)//バッテリー
+                if (Pattern < 80)//回線強度
                 {
-                    if (Pattern >= 80)//回線強度
+                    if (sePattern == 1)
                     {
-                        if (sePattern == 1)
-                        {
-                            //A
-                            se.PlayOneShot(sound1);
-                        }
-                        if (sePattern == 2)
-                        {
-                            //E
-                            se.PlayOneShot(sound2);
-                        }
-                        if (sePattern == 3)
-                        {
-                            //F
-                            se.PlayOneShot(sound3);
-                        }
+                        //E
+                        se.PlayOneShot(sound1);
                     }
-                    if (Pattern < 80)//回線強度
+                    if (sePattern == 2)
                     {
-                        if (sePattern == 1)
-                        {
-                            //F
-                            se.PlayOneShot(sound1);
-                        }
-                        if (sePattern == 2)
-                        {
-                            //F
-                            se.PlayOneShot(sound2);
-                        }
-                        if (sePattern == 3)
-                        {
-                            //E
-                            se.PlayOneShot(sound3);
-                        }
+                        //B
+                        se.PlayOneShot(sound2);
+                    }
+                    if (sePattern == 3)
+                    {
+                        //D
+                        se.PlayOneShot(sound3);
+                    }
+                }
+            }
+            if (Pattern >= 20)//バッテリー
+            {
+                if (Pattern >= 80)//回線強度
+                {
+                    if (sePattern == 1)
+                    {
+                        //A
+                        se.PlayOneShot(sound1);
+                    }
+                    if (sePattern == 2)
+                    {
+                        //E
+                        se.PlayOneShot(sound2);
+                    }
+                    if (sePattern == 3)
+                    {
+                        //F
+                        se.PlayOneShot(sound3);
+                    }
+                }
+                if (Pattern < 80)//回線強度
+                {
+                    if (sePattern == 1)
+                    {
+                        //F
+                        se.PlayOneShot(sound1);
+                    }
+                    if (sePattern == 2)
+                    {
+                        //F
+                        se.PlayOneShot(sound2);
+                    }
+                    if (sePattern == 3)
+                    {
+                        //E
+                        se.PlayOneShot(sound3);
                     }
                 }
             }
         }
+   
        
     }
     void Update()
